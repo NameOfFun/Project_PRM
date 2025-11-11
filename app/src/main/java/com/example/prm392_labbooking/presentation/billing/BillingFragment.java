@@ -16,8 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.prm392_labbooking.R;
 import com.example.prm392_labbooking.domain.model.BillingAdapter;
-import com.example.prm392_labbooking.data.db.DatabaseHelper;
+import com.example.prm392_labbooking.data.local.BookingHistoryStorage;
 import com.example.prm392_labbooking.domain.model.CartItem;
+import com.example.prm392_labbooking.domain.model.Facility;
+import com.example.prm392_labbooking.domain.model.Product;
+import com.example.prm392_labbooking.domain.model.Slot;
 import com.example.prm392_labbooking.domain.usecase.booking.SaveBookingUseCase;
 import com.example.prm392_labbooking.navigation.NavigationManager;
 import com.example.prm392_labbooking.presentation.MainActivity;
@@ -26,8 +29,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class BillingFragment extends Fragment {
     private RecyclerView rvBillingItems;
@@ -45,8 +51,7 @@ public class BillingFragment extends Fragment {
 
         ((MainActivity) requireActivity()).hideBottomNavigation();
 
-        DatabaseHelper dbHelper = new DatabaseHelper(requireContext());
-        saveBookingUseCase = new SaveBookingUseCase(dbHelper);
+        saveBookingUseCase = new SaveBookingUseCase(new com.example.prm392_labbooking.data.db.DatabaseHelper(requireContext()));
 
         initViews(view);
         loadCartItems();
@@ -134,6 +139,8 @@ public class BillingFragment extends Fragment {
 
         boolean success = saveBookingUseCase.execute(cartItems, totalPrice);
         if (success) {
+            // Persist each confirmed booking so history screen can reload it later.
+            persistBookingsToHistory(cartItems);
             com.example.prm392_labbooking.presentation.cart.CartManager cartManager = com.example.prm392_labbooking.presentation.cart.CartManager.getInstance(requireContext());
             cartManager.clearCart(); // Xóa giỏ hàng từ SharedPreferences
             Toast.makeText(requireContext(), getString(R.string.booking_confirmed), Toast.LENGTH_SHORT).show();
@@ -142,6 +149,101 @@ public class BillingFragment extends Fragment {
             }
         } else {
             Toast.makeText(requireContext(), getString(R.string.booking_failed), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void persistBookingsToHistory(List<CartItem> items) {
+        if (items == null || items.isEmpty()) return;
+        BookingHistoryStorage storage = BookingHistoryStorage.getInstance(requireContext());
+        List<BookingHistoryStorage.BookingHistoryRecord> records = new ArrayList<>();
+        for (CartItem item : items) {
+            BookingHistoryStorage.BookingHistoryRecord record = mapCartItemToHistory(item);
+            if (record != null) {
+                records.add(record);
+            }
+        }
+        if (!records.isEmpty()) {
+            storage.addRecords(records);
+        }
+    }
+
+    private BookingHistoryStorage.BookingHistoryRecord mapCartItemToHistory(CartItem item) {
+        if (item == null) return null;
+        String roomName = resolveProductName(item.getProduct());
+        String dateText = formatBookingDate(item.getDate());
+        String timeRange = buildTimeRange(item.getSlots());
+        double price = item.getPrice();
+        List<String> facilities = mapFacilities(item.getFacilities());
+        int participants = item.getProduct() != null ? item.getProduct().getNumber() : 0;
+        int durationHours = item.getSlots() != null ? item.getSlots().size() : 0;
+        return new BookingHistoryStorage.BookingHistoryRecord(
+                roomName,
+                dateText,
+                timeRange,
+                price,
+                facilities,
+                participants,
+                durationHours
+        );
+    }
+
+    private String resolveProductName(Product product) {
+        if (product == null || product.getName() == null) {
+            return getString(R.string.feedback_room_placeholder);
+        }
+        String key = product.getName();
+        int resId = getResources().getIdentifier(key, "string", requireContext().getPackageName());
+        if (resId != 0) {
+            return getString(resId);
+        }
+        return key;
+    }
+
+    private String formatBookingDate(Date date) {
+        if (date == null) {
+            date = new Date();
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+               return sdf.format(date);
+    }
+
+    private String buildTimeRange(List<Slot> slots) {
+        List<String> ranges = ValidationUtils.getMergedSlotDisplayList(slots);
+        if (ranges == null || ranges.isEmpty()) {
+            return getString(R.string.feedback_time_placeholder);
+        }
+        return android.text.TextUtils.join(", ", ranges);
+    }
+
+    private List<String> mapFacilities(List<Facility> facilities) {
+        List<String> result = new ArrayList<>();
+        if (facilities == null || facilities.isEmpty()) {
+            return result;
+        }
+        for (Facility facility : facilities) {
+            int resId = getFacilityLabelResId(facility);
+            if (resId != 0) {
+                result.add(getString(resId));
+            } else {
+                result.add(facility.getCode());
+            }
+        }
+        return result;
+    }
+
+    private int getFacilityLabelResId(Facility facility) {
+        if (facility == null) return 0;
+        switch (facility) {
+            case WHITE_BOARD:
+                return R.string.facility_white_board;
+            case TV:
+                return R.string.facility_tv;
+            case MICROPHONE:
+                return R.string.facility_microphone;
+            case NETWORK:
+                return R.string.facility_network;
+            default:
+                return 0;
         }
     }
 
