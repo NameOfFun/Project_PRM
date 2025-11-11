@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +19,8 @@ import com.example.prm392_labbooking.R;
 import com.example.prm392_labbooking.domain.model.Product;
 import com.example.prm392_labbooking.domain.model.ProductAdapter;
 import com.example.prm392_labbooking.presentation.product.ProductDetailsActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +31,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private ProductAdapter adapter;
     private List<Product> productList;
+    private TextView homeWelcome;
 
     @Nullable
     @Override
@@ -84,6 +88,7 @@ public class HomeFragment extends Fragment {
         };
         heroHandler.postDelayed(heroAutoScroll, 4000);
 
+        homeWelcome = view.findViewById(R.id.home_welcome);
         recyclerView = view.findViewById(R.id.recyclerViewProducts);
         final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         final androidx.recyclerview.widget.LinearLayoutManager listLayoutManager = new androidx.recyclerview.widget.LinearLayoutManager(getContext());
@@ -158,17 +163,30 @@ public class HomeFragment extends Fragment {
 
         // Add bottom padding to avoid overlap with bottom navigation
         view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom() + getResources().getDimensionPixelSize(R.dimen.bottom_nav_height));
+        updateWelcomeMessage();
         return view;
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        updateWelcomeMessage();
         if (getActivity() != null) {
             android.view.View nav = getActivity().findViewById(R.id.bottom_navigation);
             if (nav instanceof com.google.android.material.bottomnavigation.BottomNavigationView) {
                 ((com.google.android.material.bottomnavigation.BottomNavigationView) nav).setSelectedItemId(R.id.nav_home);
             }
+        }
+    }
+
+    private void updateWelcomeMessage() {
+        if (homeWelcome == null || getContext() == null) return;
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String displayName = user != null ? user.getDisplayName() : null;
+        if (displayName != null && !displayName.trim().isEmpty()) {
+            homeWelcome.setText(getString(R.string.home_welcome_user, displayName));
+        } else {
+            homeWelcome.setText(getString(R.string.home_welcome));
         }
     }
 

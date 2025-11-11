@@ -44,6 +44,24 @@
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/colorSurface">
             <TextView
+                android:id="@+id/btn_profile"
+                style="@style/SettingsButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="@string/profile_title"
+                android:textSize="16sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/colorSurface">
+            <TextView
                 android:id="@+id/btn_reset_password"
                 style="@style/SettingsButtonStyle"
                 android:layout_width="match_parent"

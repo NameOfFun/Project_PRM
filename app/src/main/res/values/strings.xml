@@ -201,6 +201,7 @@
     <string name="home_title">Trang chủ</string>
     <string name="home_welcome">Chào mừng bạn đến với LabConnect!</string>
     <string name="home_tip">Mẹo: Bắt đầu bằng cách đặt phòng lab hoặc kiểm tra giỏ hàng của bạn.</string>
+    <string name="home_welcome_user">Chào mừng %1$s đến với LabConnect!</string>
     <string name="book_lab">Đặt Phòng Lab</string>
     <string name="view_cart">Xem Giỏ Hàng</string>
     <string name="browse_packages">Xem Gói</string>
@@ -247,4 +248,24 @@
     <string name="product_price_label">Giá: %1$.2f</string>
     <string name="product_quantity_label">Số lượng: %1$d</string>
     <string name="cart_remove_confirm">Bạn có chắc muốn xóa mục này khỏi giỏ hàng?</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Hồ sơ người dùng</string>
+    <string name="display_name">Tên hiển thị</string>
+    <string name="edit_display_name">Chỉnh sửa tên hiển thị</string>
+    <string name="enter_new_display_name">Nhập tên hiển thị mới</string>
+    <string name="display_name_required">Vui lòng nhập tên hiển thị</string>
+    <string name="display_name_updated">Đã cập nhật tên hiển thị thành công</string>
+    <string name="error_updating_name">Lỗi khi cập nhật tên hiển thị</string>
+    <string name="change_password">Đổi mật khẩu</string>
+    <string name="current_password">Mật khẩu hiện tại</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="current_password_required">Vui lòng nhập mật khẩu hiện tại</string>
+    <string name="current_password_incorrect">Mật khẩu hiện tại không đúng</string>
+    <string name="password_changed_success">Đã đổi mật khẩu thành công</string>
+    <string name="error_changing_password">Lỗi khi đổi mật khẩu</string>
+    <string name="account_actions">Thao tác tài khoản</string>
+    <string name="not_available">Không có</string>
+    <string name="not_set">Chưa đặt</string>
+    <string name="save">Lưu</string>
 </resources>

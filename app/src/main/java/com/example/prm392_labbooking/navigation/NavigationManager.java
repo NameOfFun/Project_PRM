@@ -18,6 +18,7 @@ import com.example.prm392_labbooking.presentation.cart.CartFragment;
 import com.example.prm392_labbooking.presentation.settings.SettingsFragment;
 import com.example.prm392_labbooking.presentation.billing.BillingFragment;
 import com.example.prm392_labbooking.presentation.chat.ChatActivity;
+import com.example.prm392_labbooking.presentation.profile.ProfileActivity;
 import com.example.prm392_labbooking.R;
 
 public class NavigationManager {
@@ -77,6 +78,10 @@ public class NavigationManager {
 
     public static void goToChat(Context context) {
         context.startActivity(new Intent(context, ChatActivity.class));
+    }
+
+    public static void goToProfile(Context context) {
+        context.startActivity(new Intent(context, ProfileActivity.class));
     }
 
     public static void goBack(Activity activity) {

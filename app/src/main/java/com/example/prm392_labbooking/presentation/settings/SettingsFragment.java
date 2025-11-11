@@ -36,10 +36,12 @@ public class SettingsFragment extends Fragment {
         TextView resetPasswordBtn = view.findViewById(R.id.btn_reset_password);
         TextView logoutBtn = view.findViewById(R.id.btn_login_logout);
         TextView chatSupportBtn = view.findViewById(R.id.btn_chat_support);
+        TextView profileBtn = view.findViewById(R.id.btn_profile);
         Spinner themeSpinner = view.findViewById(R.id.spinner_theme);
         Spinner languageSpinner = view.findViewById(R.id.spinner_language);
 
         resetPasswordBtn.setOnClickListener(v -> showResetPasswordDialog());
+        profileBtn.setOnClickListener(v -> NavigationManager.goToProfile(requireContext()));
         logoutBtn.setOnClickListener(v -> {
             new AlertDialog.Builder(requireContext())
                     .setTitle(R.string.logout)

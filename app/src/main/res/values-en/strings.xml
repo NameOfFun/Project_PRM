@@ -207,6 +207,7 @@
     <string name="home_title">Home</string>
     <string name="home_welcome">Welcome to LabConnect!</string>
     <string name="home_tip">Tip: Start by booking a lab or checking your cart.</string>
+    <string name="home_welcome_user">Welcome %1$s to LabConnect!</string>
     <string name="book_lab">Book a Lab</string>
     <string name="view_cart">View Cart</string>
 
@@ -251,4 +252,24 @@
     <string name="product_price_label">Price: %1$.2f</string>
     <string name="product_quantity_label">Quantity: %1$d</string>
     <string name="cart_remove_confirm">Are you sure you want to remove this item from your cart?</string>
+
+    <!-- Profile -->
+    <string name="profile_title">User Profile</string>
+    <string name="display_name">Display Name</string>
+    <string name="edit_display_name">Edit Display Name</string>
+    <string name="enter_new_display_name">Enter new display name</string>
+    <string name="display_name_required">Please enter display name</string>
+    <string name="display_name_updated">Display name updated successfully</string>
+    <string name="error_updating_name">Error updating display name</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="current_password_required">Please enter current password</string>
+    <string name="current_password_incorrect">Current password is incorrect</string>
+    <string name="password_changed_success">Password changed successfully</string>
+    <string name="error_changing_password">Error changing password</string>
+    <string name="account_actions">Account Actions</string>
+    <string name="not_available">Not available</string>
+    <string name="not_set">Not set</string>
+    <string name="save">Save</string>
 </resources>
