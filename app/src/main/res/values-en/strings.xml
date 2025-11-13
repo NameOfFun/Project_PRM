@@ -2,7 +2,7 @@
 
     <!-- Subtotal / Tax / Total -->
     <string name="subtotal_label">Subtotal: $%1$.2f</string>
-    <string name="tax_label">Tax (8%): $%1$.2f</string>
+    <string name="tax_label">Tax (8%%): $%1$.2f</string>
     <string name="total_label">Total: $%1$.2f</string>
 
     <!-- App Name -->
@@ -25,7 +25,7 @@
     <string name="passwords_not_match">Passwords do not match</string>
     <string name="send_reset_password_request">Send reset password request</string>
     <string name="back_to_login">Back to Login</string>
-    <string name="register_prompt">Don't have an account? Register</string>
+    <string name="register_prompt">Don\'t have an account? Register</string>
     <string name="or">or</string>
     <string name="google_sign_in">Sign in with Google</string>
     <string name="google_sign_in_success">Google Sign-In successful!</string>
@@ -47,15 +47,20 @@
     <string name="choose_date">Choose Date</string>
     <string name="choose_time_slots">Choose Time Slots</string>
     <string name="no_slots_selected">No time slots selected</string>
+    <string name="date_label">Date</string>
+    <string name="slots_label">Time Slots</string>
 
     <!-- Facilities -->
     <string name="facility_white_board">Whiteboard</string>
     <string name="facility_tv">TV</string>
     <string name="facility_microphone">Microphone</string>
     <string name="facility_network">Wifi</string>
+    <string name="none">None</string>
+    <string name="remaining_time">Remaining time</string>
 
     <string name="add_to_cart">Add to Cart</string>
     <string name="added_to_cart">Added to cart</string>
+    <string name="cart_remove_confirm">Are you sure you want to remove this item from your cart?</string>
 
     <!-- Cart -->
     <string name="cart">Cart</string>
@@ -68,6 +73,9 @@
     <string name="cart_empty_message">Your cart is empty!</string>
     <string name="cart_summary">You have %1$d items in your cart!</string>
     <string name="cart_item_expired">This package has expired</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Tax (8%)</string>
+    <string name="total">Total</string>
 
     <!-- Billing -->
     <string name="billing">Billing</string>
@@ -89,11 +97,38 @@
 
     <string name="booking_confirmed">Booking confirmed!</string>
     <string name="booking_failed">Booking failed. Please try again.</string>
+    <string name="feedback_room_placeholder">Select room</string>
+    <string name="feedback_time_placeholder">Select time</string>
+    <string name="feedback_participants_format">%1$d participants</string>
+    <string name="feedback_facilities_format">%1$s</string>
+    <string name="history_item_price_format">$%1$.2f</string>
+    <string name="history_item_rating_format">%1$.1f/5</string>
+    <string name="history_status_completed">Completed</string>
+    <string name="history_status_cancelled">Cancelled</string>
+    <string name="history_status_pending">Pending</string>
+    <string name="history_total_hours_format">%1$d hours</string>
+    <string name="history_last_updated">Last updated: %1$s</string>
+    <string name="history_empty_message">No booking history yet</string>
+    <string name="history_retry">Retry</string>
+    <string name="history_total_sessions_label">Total sessions</string>
+    <string name="history_total_hours_label">Total hours</string>
+    <string name="history_filter_all">All</string>
+    <string name="history_filter_completed">Completed</string>
+    <string name="history_filter_cancelled">Cancelled</string>
+    <string name="history_feedback_button">Feedback</string>
+    <string name="history_title">Booking History</string>
 
     <!-- Notifications -->
     <string name="cart_not_empty">You still have items in your cart!</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="cart_expiry_title">Booking Expiry Reminder</string>
+    <string name="cart_expiry_message">Your booking for %1$s will expire at %2$s.</string>
+    <string name="cart_expiry_channel_name">Booking Reminders</string>
+    <string name="cart_expiry_channel_desc">Notifications for expiring bookings in your cart.</string>
+    <string name="expiry_24h">24 hours</string>
+    <string name="expiry_10h">10 hours</string>
+    <string name="expiry_1h">1 hour</string>
 
     <!-- Map -->
     <string name="lab_location">Lab Location</string>
@@ -102,9 +137,23 @@
     <string name="map_normal">Normal</string>
     <string name="map_satellite">Satellite</string>
     <string name="map_terrain">Terrain</string>
+    <string name="map_layers">Map Layers</string>
+    <string name="compass">Compass</string>
     <string name="map_hybrid">Hybrid</string>
     <string name="recenter">Recenter</string>
     <string name="open_in_google_maps">Open in Google Maps</string>
+    <string name="reset_compass">Reset North</string>
+    <string name="toggle_map_actions">Show/hide map actions</string>
+    <string name="offscreen_marker">Lab Location Indicator</string>
+    <string name="show_directions">Show Directions</string>
+    <string name="location_not_found">Could not get your location</string>
+    <string name="location_permission_required">Location permission required</string>
+    <string name="switched_to_normal">Switched to Normal mode</string>
+    <string name="switched_to_satellite">Switched to Satellite mode</string>
+    <string name="switched_to_terrain">Switched to Terrain mode</string>
+    <string name="switched_to_hybrid">Switched to Hybrid mode</string>
+    <string name="no_internet_connection">No internet connection. Some features may not work.</string>
+    <string name="internet_connection_back">Internet connection restored.</string>
 
     <!-- Chat -->
     <string name="chat">Chat</string>
@@ -113,6 +162,16 @@
     <string name="salesman">Support Agent</string>
     <string name="user">You</string>
     <string name="chat_placeholder">Start chatting with a support agent!</string>
+    <string name="error_load_chat_history">Unable to load chat history</string>
+    <string name="error_save_chat_history">Unable to save chat history</string>
+    <string name="error_load_support_chat">Unable to load support chat</string>
+    <string name="error_save_support_chat">Unable to save support chat</string>
+    <string name="menu_clear_chat">Clear chat history</string>
+    <string name="dialog_clear_chat_title">Clear Chat History</string>
+    <string name="dialog_clear_chat_message">Are you sure you want to clear chat history?</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="placeholder_screen">Placeholder screen</string>
 
     <!-- Settings -->
     <string name="settings_title">Settings</string>
@@ -120,11 +179,14 @@
     <string name="support_section">Support</string>
     <string name="preferences_section">Preferences</string>
     <string name="chat_with_support">Customer Support</string>
+    <string name="chat_with_chatbot">Virtual Assistant</string>
     <string name="theme">Theme</string>
     <string name="language">Language</string>
     <string name="logout_confirm">Are you sure you want to log out?</string>
+    <string name="reset_password_email_sent">Password reset email sent!</string>
+    <string name="error">An error occurred</string>
 
-    <!-- Theme Options -->
+    <!-- Theme -->
     <string name="theme_system">System</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
@@ -139,6 +201,8 @@
     <string name="product_7">4 Seats - 1 Table</string>
     <string name="product_8">6 Seats - 1 Table</string>
     <string name="product_9">12 Seats - 2 Tables</string>
+    <string name="product_price_label">Price: $%1$.2f</string>
+    <string name="product_quantity_label">Quantity: %1$d</string>
 
     <!-- Profile -->
     <string name="profile_title">User Profile</string>
@@ -147,21 +211,48 @@
     <string name="enter_new_display_name">Enter new display name</string>
     <string name="display_name_required">Display name is required</string>
     <string name="display_name_updated">Display name updated</string>
+    <string name="error_updating_name">Error updating display name</string>
     <string name="change_password">Change Password</string>
     <string name="current_password">Current Password</string>
     <string name="new_password">New Password</string>
     <string name="password_changed_success">Password changed successfully</string>
+    <string name="account_actions">Account Actions</string>
+    <string name="not_available">Not available</string>
+    <string name="not_set">Not set</string>
+    <string name="save">Save</string>
 
-    <string name="hero_title">🔥 Save up to 30% on all bookings</string>
+    <!-- HERO CARDS -->
+    <string name="hero_title">Save up to 30% on all bookings</string>
     <string name="hero_subtitle">Book your lab now and enjoy exclusive discounts.</string>
 
-    <string name="hero_title_2">🎉 New Labs Open!</string>
+    <string name="hero_title_2">New Labs Open!</string>
     <string name="hero_subtitle_2">Check out our latest locations and book today.</string>
 
-    <string name="hero_title_3">⭐ Premium Experience</string>
+    <string name="hero_title_3">Premium Experience</string>
     <string name="hero_subtitle_3">Upgrade to enjoy exclusive benefits.</string>
 
     <string name="home_welcome_user">Welcome %1$s to LabConnect!</string>
     <string name="home_welcome">Welcome to LabConnect!</string>
+    <string name="home_tip">Tip: Start by booking a lab or checking your cart.</string>
+    <string name="day">days</string>
+    <string name="hour">hours</string>
+    <string name="min">minutes</string>
+    <string name="general_error_required_fields">Please fill all required fields</string>
+
+    <!-- Facilities Labels -->
+    <string name="facilities_label">Facilities:</string>
+    <string name="facility_name">Name</string>
+    <string name="facility_price">Price</string>
+
+    <!-- Navigation -->
+    <string name="back">Back</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_cart">Cart</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Other -->
+    <string name="edit">Edit</string>
+    <string name="time_sample">2025-07-01 | 08:00 - 10:00</string>
 
 </resources>

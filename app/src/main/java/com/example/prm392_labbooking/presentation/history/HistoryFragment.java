@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.prm392_labbooking.R;
 import com.example.prm392_labbooking.data.local.BookingHistoryStorage;
-import com.example.prm392_labbooking.presentation.feedback.FeedbackActivity;
+// import com.example.prm392_labbooking.presentation.feedback.FeedbackActivity; // TODO: Create FeedbackActivity
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -153,17 +153,19 @@ public class HistoryFragment extends Fragment {
     }
 
     private void openFeedback(BookingHistoryItem item) {
-        Intent intent = new Intent(requireContext(), FeedbackActivity.class);
-        intent.putExtra("room_name", item.getRoomName());
-        intent.putExtra("booking_date", item.getDate());
-        intent.putExtra("booking_time", item.getTimeRange());
-        intent.putExtra("participants", item.getParticipants());
-        ArrayList<String> facilities = item.getFacilities() != null
-                ? new ArrayList<>(item.getFacilities())
-                : new ArrayList<>();
-        intent.putStringArrayListExtra("facilities", facilities);
-        intent.putExtra("initial_rating", item.getRating());
-        startActivity(intent);
+        // TODO: Implement FeedbackActivity
+        // Intent intent = new Intent(requireContext(), FeedbackActivity.class);
+        // intent.putExtra("room_name", item.getRoomName());
+        // intent.putExtra("booking_date", item.getDate());
+        // intent.putExtra("booking_time", item.getTimeRange());
+        // intent.putExtra("participants", item.getParticipants());
+        // ArrayList<String> facilities = item.getFacilities() != null
+        //         ? new ArrayList<>(item.getFacilities())
+        //         : new ArrayList<>();
+        // intent.putStringArrayListExtra("facilities", facilities);
+        // intent.putExtra("initial_rating", item.getRating());
+        // startActivity(intent);
+        android.widget.Toast.makeText(requireContext(), "Feedback feature coming soon", android.widget.Toast.LENGTH_SHORT).show();
     }
 
     @Nullable
