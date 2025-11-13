@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class CartItem {
+
     private Date date;
     private double price; // = gia product * so slot + tong gia facility
 
@@ -16,8 +17,8 @@ public class CartItem {
     public CartItem() {
     }
 
-    // 🔹 Constructor đầy đủ
-    public CartItem(Product product,List<Facility> facilities, List<Slot> slots, Date date, double price) {
+    // Constructor đầy đủ
+    public CartItem(Product product, List<Facility> facilities, List<Slot> slots, Date date, double price) {
         this.date = date;
         this.price = price;
         this.product = product;
@@ -25,9 +26,7 @@ public class CartItem {
         this.slots = slots;
     }
 
-    // 🔹 Getter và Setter
-
-
+    // GETTER - SETTER
     public Date getDate() {
         return date;
     }
@@ -40,6 +39,10 @@ public class CartItem {
         return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public Product getProduct() {
         return product;
     }
@@ -48,14 +51,9 @@ public class CartItem {
         this.product = product;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public List<Facility> getFacilities() {
         return _facilities;
     }
-
 
     public void setFacilities(List<Facility> _facilities) {
         this._facilities = _facilities;

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    tools:context=".ui.settings.SettingsFragment">
+    android:background="@color/colorBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,13 +11,12 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Title Bar -->
+        <!-- Title -->
         <TextView
             android:id="@+id/settings_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="0dp"
             android:text="@string/settings_title"
             android:textColor="@color/colorOnBackground"
             android:textSize="24sp"
@@ -32,10 +29,10 @@
             android:text="@string/account_section"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp"
+            android:paddingTop="12dp"
             android:textColor="@color/colorOnBackground" />
 
+        <!-- Profile -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,6 +40,7 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/colorSurface">
+
             <TextView
                 android:id="@+id/btn_profile"
                 style="@style/SettingsButtonStyle"
@@ -54,6 +52,7 @@
                 android:textSize="16sp" />
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Reset Password -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,6 +60,7 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/colorSurface">
+
             <TextView
                 android:id="@+id/btn_reset_password"
                 style="@style/SettingsButtonStyle"
@@ -72,6 +72,7 @@
                 android:textSize="16sp" />
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Logout -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,6 +80,7 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/colorSurface">
+
             <TextView
                 android:id="@+id/btn_login_logout"
                 style="@style/SettingsButtonStyle"
@@ -98,9 +100,9 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:paddingTop="16dp"
-            android:paddingBottom="4dp"
             android:textColor="@color/colorOnBackground" />
 
+        <!-- Chat Support -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,6 +110,7 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/colorSurface">
+
             <TextView
                 android:id="@+id/btn_chat_support"
                 style="@style/SettingsButtonStyle"
@@ -119,7 +122,7 @@
                 android:textSize="16sp" />
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Preferences Section (example) -->
+        <!-- Preferences Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,10 +130,9 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:paddingTop="16dp"
-            android:paddingBottom="4dp"
             android:textColor="@color/colorOnBackground" />
 
-        <!-- Language selection -->
+        <!-- Language Selection -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -138,11 +140,13 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/colorSurface">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="12dp">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -151,27 +155,31 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorOnBackground" />
+
                 <Spinner
                     android:id="@+id/spinner_language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:entries="@array/language_options" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Theme selection -->
+        <!-- Theme Selection -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="12dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/colorSurface">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="12dp">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -180,13 +188,16 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorOnBackground" />
+
                 <Spinner
                     android:id="@+id/spinner_theme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:entries="@array/theme_options" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
+
 </ScrollView>

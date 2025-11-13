@@ -1,7 +1,10 @@
 <resources>
+
+    <!-- Subtotal / Tax / Total -->
     <string name="subtotal_label">Tạm tính: $%1$.2f</string>
-    <string name="tax_label">Thuế (8%%): $%1$.2f</string>
-    <!-- VIETNAMESE -->
+    <string name="tax_label">Thuế (8%): $%1$.2f</string>
+    <string name="total_label">Tổng cộng: $%1$.2f</string>
+
     <!-- App Name -->
     <string name="app_name">LabConnect</string>
 
@@ -28,7 +31,7 @@
     <string name="google_sign_in_success">Đăng nhập Google thành công!</string>
     <string name="google_sign_in_failed">Đăng nhập Google thất bại: %1$s</string>
 
-    <!-- Product/Package List -->
+    <!-- Product List -->
     <string name="package_list">Danh sách gói</string>
     <string name="seat_package">Gói chỗ ngồi</string>
     <string name="table_package">Gói bàn</string>
@@ -41,98 +44,67 @@
     <!-- Product Details -->
     <string name="package_details">Chi tiết gói</string>
     <string name="select_facilities">Chọn tiện ích bổ sung</string>
+    <string name="choose_date">Chọn ngày</string>
+    <string name="choose_time_slots">Chọn khung giờ</string>
+    <string name="no_slots_selected">Chưa chọn khung giờ</string>
+
+    <!-- Facilities -->
     <string name="facility_white_board">Bảng trắng</string>
     <string name="facility_tv">Tivi</string>
     <string name="facility_microphone">Microphone</string>
     <string name="facility_network">Wifi</string>
+
     <string name="add_to_cart">Thêm vào giỏ</string>
     <string name="added_to_cart">Đã thêm vào giỏ hàng</string>
-
-    <!-- Product Details Activity Specific -->
-    <string name="choose_date">Chọn ngày</string>
-    <string name="choose_time_slots">Chọn khung giờ</string>
-    <string name="no_slots_selected">Chưa chọn khung giờ</string>
 
     <!-- Cart -->
     <string name="cart">Giỏ hàng</string>
     <string name="cart_empty">Giỏ hàng trống</string>
     <string name="remove">Xóa</string>
-<!--    <string name="total">Tổng cộng: %1$s</string>-->
     <string name="proceed_to_checkout">Tiếp tục thanh toán</string>
     <string name="remove_item_confirm">Bạn có chắc muốn xóa mục này?</string>
-    <string name="cart_fragment">Giỏ hàng</string>
     <string name="cart_title">Giỏ Hàng Của Tôi</string>
     <string name="delete_all">XÓA TẤT CẢ</string>
-    <string name="room_label">Phòng: Phòng A</string>
-    <string name="time_sample">2025-07-01 | 08:00 - 10:00</string>
-    <string name="features_sample">Tính năng: [Bảng trắng, Máy chiếu]</string>
-    <string name="price_sample">60.00$</string>
-    <string name="delete">Xóa</string>
-    <string name="subtotal">Tạm tính</string>
-    <string name="tax">Thuế (8%)</string>
-    <string name="total">Tổng cộng</string>
-    <string name="load_sample_data">Tải Dữ Liệu Mẫu</string>
     <string name="cart_empty_message">Giỏ hàng của bạn đang trống!</string>
     <string name="cart_summary">Bạn có %1$d sản phẩm trong giỏ hàng!</string>
     <string name="cart_item_expired">Gói này đã hết hạn</string>
 
-    <!-- Billing/Checkout -->
+    <!-- Billing -->
     <string name="billing">Thanh toán</string>
+    <string name="billing_title">Thanh toán</string>
     <string name="booking_summary">Tóm tắt đặt chỗ</string>
     <string name="confirm_booking">Xác nhận đặt chỗ</string>
     <string name="payment_info">Thông tin thanh toán</string>
-    <string name="billing_summary">Tóm tắt thanh toán</string>
-    <string name="billing_total_placeholder">Tổng cộng: $0</string>
     <string name="payment_details">Chi tiết thanh toán</string>
+
     <string name="cardholder_name">Tên chủ thẻ</string>
     <string name="card_number">Số thẻ</string>
     <string name="expiry_date">MM/YY</string>
     <string name="cvv">CVV</string>
-    <string name="pay">Thanh toán</string>
-    <string name="booking_success">Đặt chỗ thành công!</string>
-    <string name="booking_failed">Đặt chỗ thất bại. Vui lòng thử lại.</string>
-    <string name="billing_title">Thanh toán</string>
-    <string name="total_label">Tổng cộng: $%1$.2f</string>
+
     <string name="error_cardholder_name">Vui lòng nhập tên chủ thẻ hợp lệ</string>
     <string name="error_card_number">Vui lòng nhập số thẻ gồm 16 chữ số</string>
-    <string name="error_expiry_date">Nhập ngày MM/YY hợp lệ từ tháng này trở đi</string>
+    <string name="error_expiry_date">Nhập ngày MM/YY hợp lệ</string>
     <string name="error_cvv">Nhập CVV gồm 3 chữ số</string>
+
     <string name="booking_confirmed">Đặt chỗ thành công!</string>
+    <string name="booking_failed">Đặt chỗ thất bại. Vui lòng thử lại.</string>
 
     <!-- Notifications -->
     <string name="cart_not_empty">Bạn còn sản phẩm trong giỏ hàng!</string>
     <string name="ok">Đồng ý</string>
     <string name="cancel">Hủy</string>
-    <string name="cart_expiry_title">Nhắc nhở đơn hàng hết hạn</string>
-    <string name="cart_expiry_message">Đặt chỗ cho %1$s sẽ hết hạn vào lúc %2$s.</string>
-    <string name="cart_expiry_channel_name">Nhắc nhở đơn hàng</string>
-    <string name="cart_expiry_channel_desc">Thông báo khi đặt chỗ trong giỏ hàng sắp hết hạn.</string>
-    <string name="expiry_24h">24 giờ</string>
-    <string name="expiry_10h">10 giờ</string>
-    <string name="expiry_1h">1 giờ</string>
 
     <!-- Map -->
     <string name="lab_location">Vị trí phòng LAB</string>
     <string name="show_on_map">Xem trên bản đồ</string>
     <string name="map_loading">Đang tải bản đồ...</string>
-    <string name="map_layers">Lớp bản đồ</string>
     <string name="map_normal">Bình thường</string>
     <string name="map_satellite">Vệ tinh</string>
     <string name="map_terrain">Địa hình</string>
     <string name="map_hybrid">Kết hợp</string>
     <string name="recenter">Căn giữa</string>
-    <string name="compass">La bàn</string>
-    <string name="reset_compass">Đặt lại hướng Bắc</string>
-    <string name="offscreen_marker">Chỉ báo vị trí Lab</string>
-    <string name="lab_location_offscreen">Lab nằm ngoài màn hình</string>
     <string name="open_in_google_maps">Mở trong Google Maps</string>
-    <string name="show_directions">Chỉ đường</string>
-    <string name="switched_to_normal">Đã chuyển sang chế độ Bình thường</string>
-    <string name="switched_to_satellite">Đã chuyển sang chế độ Vệ tinh</string>
-    <string name="switched_to_terrain">Đã chuyển sang chế độ Địa hình</string>
-    <string name="switched_to_hybrid">Đã chuyển sang chế độ Kết hợp</string>
-    <string name="no_internet_connection">Không có kết nối internet. Một số tính năng có thể không hoạt động.</string>
-    <string name="internet_connection_back">Kết nối internet đã được khôi phục.</string>
 
     <!-- Chat -->
     <string name="chat">Trò chuyện</string>
@@ -141,99 +113,21 @@
     <string name="salesman">Nhân viên tư vấn</string>
     <string name="user">Bạn</string>
     <string name="chat_placeholder">Hãy bắt đầu trò chuyện với nhân viên tư vấn!</string>
-    <string name="error_load_chat_history">Không thể tải lịch sử trò chuyện</string>
-    <string name="error_save_chat_history">Không thể lưu lịch sử trò chuyện</string>
-    <string name="error_load_support_chat">Không thể tải trò chuyện hỗ trợ</string>
-    <string name="error_save_support_chat">Không thể lưu trò chuyện hỗ trợ</string>
-    <string name="placeholder_screen">Màn hình chờ</string>
-
-    <!-- General -->
-    <string name="yes">Có</string>
-    <string name="no">Không</string>
-    <string name="loading">Đang tải...</string>
-    <string name="error">Đã xảy ra lỗi</string>
-    <string name="retry">Thử lại</string>
-    <string name="close">Đóng</string>
-    <string name="reset_password_email_sent">Đã gửi email đặt lại mật khẩu! Vui lòng kiểm tra hộp thư của bạn.</string>
-    <string name="general_error_required_fields">Vui lòng điền thông tin hợp lệ</string>
-    <string name="none">Không</string>
 
     <!-- Settings -->
     <string name="settings_title">Cài đặt</string>
     <string name="account_section">Tài khoản</string>
     <string name="support_section">Hỗ trợ</string>
     <string name="preferences_section">Tùy chọn</string>
-    <string name="faq">Câu hỏi thường gặp</string>
     <string name="chat_with_support">Hỗ trợ khách hàng</string>
-    <string name="preferences">Tùy chọn</string>
-    <string name="chat_with_chatbot">Trợ lý ảo</string>
     <string name="theme">Giao diện</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="logout_confirm">Bạn có chắc chắn muốn đăng xuất?</string>
+
+    <!-- Theme Options -->
     <string name="theme_system">Hệ thống</string>
     <string name="theme_light">Sáng</string>
     <string name="theme_dark">Tối</string>
-
-    <!-- Clear Chat -->
-    <string name="menu_clear_chat">Xóa lịch sử trò chuyện</string>
-    <string name="dialog_clear_chat_title">Xóa Lịch Sử Trò Chuyện</string>
-    <string name="dialog_clear_chat_message">Bạn có chắc chắn muốn xóa lịch sử trò chuyện?</string>
-    <string name="dialog_yes">Có</string>
-    <string name="dialog_cancel">Hủy</string>
-
-    <!-- Bottom Navigation -->
-    <string name="nav_home">Trang chủ</string>
-    <string name="nav_map">Bản đồ</string>
-    <string name="nav_cart">Giỏ hàng</string>
-    <string name="nav_settings">Cài đặt</string>
-
-    <!-- Logout Confirmation -->
-    <string name="logout_confirm">Bạn có chắc chắn muốn đăng xuất?</string>
-
-    <!-- Language -->
-    <string name="language">Ngôn ngữ</string>
-
-    <!-- Facilities, Date, and Slots Labels -->
-    <string name="facilities_label">Tiện ích:</string>
-    <string name="date_label">Ngày:</string>
-    <string name="slots_label">Khung giờ</string>
-    <string name="back">Quay lại</string>
-
-    <!-- Home Title -->
-    <string name="home_title">Trang chủ</string>
-    <string name="home_welcome">Chào mừng bạn đến với LabConnect!</string>
-    <string name="home_tip">Mẹo: Bắt đầu bằng cách đặt phòng lab hoặc kiểm tra giỏ hàng của bạn.</string>
-    <string name="home_welcome_user">Chào mừng %1$s đến với LabConnect!</string>
-    <string name="book_lab">Đặt Phòng Lab</string>
-    <string name="view_cart">Xem Giỏ Hàng</string>
-    <string name="browse_packages">Xem Gói</string>
-    <string name="chat_support">Hỗ trợ</string>
-    <string name="settings">Cài đặt</string>
-
-    <!-- Hero Section -->
-    <string name="hero_title">🔥 Giảm giá đến 30% cho mọi gói đặt chỗ</string>
-    <string name="hero_subtitle">Đặt phòng lab ngay để nhận ưu đãi độc quyền. Chỉ trong hôm nay</string>
-    <string name="hero_btn_left">Xem ưu đãi</string>
-    <string name="hero_btn_right">Đặt ngay</string>
-    <string name="hero_title_2">🎉 Phòng lab mới khai trương!</string>
-    <string name="hero_subtitle_2">Khám phá các địa điểm mới nhất và đặt chỗ ngay hôm nay.</string>
-    <string name="hero_btn_left_2">Khám phá</string>
-    <string name="hero_btn_right_2">Tìm gần bạn</string>
-    <string name="hero_title_3">⭐ Trải nghiệm nhanh và cao cấp</string>
-    <string name="hero_subtitle_3">Nâng cấp tài khoản để nhận nhiều quyền lợi và đặt chỗ nhanh hơn.</string>
-    <string name="hero_btn_left_3">Tìm hiểu thêm</string>
-    <string name="hero_btn_right_3">Nâng cấp</string>
-    <string name="see_more">Xem thêm</string>
-    <string name="location_not_found">Không thể xác định vị trí</string>
-    <string name="location_permission_required">Cần quyền truy cập vị trí</string>
-    <string name="toggle_map_actions">Ẩn/Hiện Các nút hành động</string>
-
-    <!-- Facilities Table Labels -->
-    <string name="remaining_time">Thời gian còn lại</string>
-    <string name="facility_name">Tên</string>
-    <string name="facility_price">Giá</string>
-    <string name="day">ngày</string>
-    <string name="hour">giờ</string>
-    <string name="min">phút</string>
-    <string name="edit">Chỉnh sửa</string>
 
     <!-- Product Names -->
     <string name="product_1">1 chỗ ngồi</string>
@@ -245,27 +139,29 @@
     <string name="product_7">4 chỗ ngồi - 1 bàn</string>
     <string name="product_8">6 chỗ ngồi - 1 bàn</string>
     <string name="product_9">12 chỗ ngồi - 2 bàn</string>
-    <string name="product_price_label">Giá: %1$.2f</string>
-    <string name="product_quantity_label">Số lượng: %1$d</string>
-    <string name="cart_remove_confirm">Bạn có chắc muốn xóa mục này khỏi giỏ hàng?</string>
 
-    <!-- Profile -->
+    <!-- Profile (HEAD branch) -->
     <string name="profile_title">Hồ sơ người dùng</string>
     <string name="display_name">Tên hiển thị</string>
     <string name="edit_display_name">Chỉnh sửa tên hiển thị</string>
     <string name="enter_new_display_name">Nhập tên hiển thị mới</string>
     <string name="display_name_required">Vui lòng nhập tên hiển thị</string>
-    <string name="display_name_updated">Đã cập nhật tên hiển thị thành công</string>
-    <string name="error_updating_name">Lỗi khi cập nhật tên hiển thị</string>
+    <string name="display_name_updated">Đã cập nhật tên hiển thị</string>
     <string name="change_password">Đổi mật khẩu</string>
     <string name="current_password">Mật khẩu hiện tại</string>
     <string name="new_password">Mật khẩu mới</string>
-    <string name="current_password_required">Vui lòng nhập mật khẩu hiện tại</string>
-    <string name="current_password_incorrect">Mật khẩu hiện tại không đúng</string>
-    <string name="password_changed_success">Đã đổi mật khẩu thành công</string>
-    <string name="error_changing_password">Lỗi khi đổi mật khẩu</string>
-    <string name="account_actions">Thao tác tài khoản</string>
-    <string name="not_available">Không có</string>
-    <string name="not_set">Chưa đặt</string>
-    <string name="save">Lưu</string>
+    <string name="password_changed_success">Đổi mật khẩu thành công</string>
+
+    <string name="hero_title">🔥 Giảm giá đến 30% cho mọi gói đặt chỗ</string>
+    <string name="hero_subtitle">Đặt phòng lab ngay để nhận ưu đãi độc quyền.</string>
+
+    <string name="hero_title_2">🎉 Phòng lab mới khai trương!</string>
+    <string name="hero_subtitle_2">Khám phá các địa điểm mới nhất và đặt chỗ ngay hôm nay.</string>
+
+    <string name="hero_title_3">⭐ Trải nghiệm nhanh và cao cấp</string>
+    <string name="hero_subtitle_3">Nâng cấp tài khoản để nhận nhiều quyền lợi.</string>
+
+    <string name="home_welcome_user">Chào mừng %1$s đến với LabConnect!</string>
+    <string name="home_welcome">Chào mừng bạn đến với LabConnect!</string>
+
 </resources>

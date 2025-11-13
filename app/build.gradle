@@ -8,12 +8,10 @@ android {
 
     defaultConfig {
         applicationId "com.example.prm392_labbooking"
-//        minSdk 23 Dong: toi doi tu 23 len 26 do no cai localTime khong dung duoc o 23
         minSdk 26
         targetSdk 35
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // Load Google Maps API key from maps.properties
@@ -46,33 +44,35 @@ dependencies {
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
+    implementation libs.play.services.analytics.impl   // giữ từ phuocpm
+
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 
-    // Firebase BOM for authentication & database
+    // Firebase BOM
     implementation platform(libs.firebase.bom)
     implementation libs.firebase.auth
     implementation libs.play.services.auth
     implementation libs.firebase.database
-    implementation libs.firebase.firestore // Firestore dependency added
+    implementation libs.firebase.firestore
 
-    // Retrofit for REST API
+    // Retrofit
     implementation libs.retrofit
     implementation libs.converter.gson
 
-    // Lifecycle (ViewModel, LiveData)
+    // Lifecycle
     implementation libs.lifecycle.viewmodel
     implementation libs.lifecycle.livedata
 
     // RecyclerView
     implementation libs.recyclerview
 
-    // Google Maps
+    // Maps
     implementation libs.play.services.maps
     implementation 'com.google.android.gms:play-services-location:21.0.1'
 
-    // MQTT dependency
+    // MQTT
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
 }
 

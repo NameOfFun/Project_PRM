@@ -2,7 +2,6 @@ package com.example.prm392_labbooking.presentation.settings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -26,22 +25,32 @@ import com.example.prm392_labbooking.utils.LocaleUtils;
 import com.example.prm392_labbooking.utils.ThemeUtils;
 
 public class SettingsFragment extends Fragment {
+
     private FirebaseAuthService authService = new FirebaseAuthService();
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
+        // UI Components
         TextView resetPasswordBtn = view.findViewById(R.id.btn_reset_password);
         TextView logoutBtn = view.findViewById(R.id.btn_login_logout);
         TextView chatSupportBtn = view.findViewById(R.id.btn_chat_support);
-        TextView profileBtn = view.findViewById(R.id.btn_profile);
+        TextView profileBtn = view.findViewById(R.id.btn_profile); // giữ từ HEAD
         Spinner themeSpinner = view.findViewById(R.id.spinner_theme);
         Spinner languageSpinner = view.findViewById(R.id.spinner_language);
 
+        // Reset password
         resetPasswordBtn.setOnClickListener(v -> showResetPasswordDialog());
+
+        // Profile
         profileBtn.setOnClickListener(v -> NavigationManager.goToProfile(requireContext()));
+
+        // Logout
         logoutBtn.setOnClickListener(v -> {
             new AlertDialog.Builder(requireContext())
                     .setTitle(R.string.logout)
@@ -57,27 +66,31 @@ public class SettingsFragment extends Fragment {
                     .setNegativeButton(R.string.cancel, null)
                     .show();
         });
+
+        // Chat support
         chatSupportBtn.setOnClickListener(v -> NavigationManager.goToChat(requireContext()));
 
+        // Theme selection
         int savedTheme = ThemeUtils.getSavedTheme(requireContext());
         themeSpinner.setSelection(savedTheme);
+
         themeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
                 if (position != savedTheme) {
                     ThemeUtils.saveTheme(requireContext(), position);
                     ThemeUtils.setTheme(position);
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        // Language selection logic
+        // Language selection
         String savedLang = LocaleUtils.getSavedLanguage(requireContext());
         int langPos = savedLang.equals("en") ? 1 : 0;
         languageSpinner.setSelection(langPos);
+
         languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
@@ -124,9 +137,10 @@ public class SettingsFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (getActivity() != null) {
-            android.view.View nav = getActivity().findViewById(R.id.bottom_navigation);
+            View nav = getActivity().findViewById(R.id.bottom_navigation);
             if (nav instanceof com.google.android.material.bottomnavigation.BottomNavigationView) {
-                ((com.google.android.material.bottomnavigation.BottomNavigationView) nav).setSelectedItemId(R.id.nav_settings);
+                ((com.google.android.material.bottomnavigation.BottomNavigationView) nav)
+                        .setSelectedItemId(R.id.nav_settings);
             }
         }
     }
